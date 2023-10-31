@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Tenzity Store",
-  description: "Based in Georgia, Tbilisi",
+  name: "TENZITY",
+  description: "COMING SOON",
   footer: [
     { name: "Home", href: "/" },
     { name: "About", href: "#" },

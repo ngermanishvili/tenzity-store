@@ -31,7 +31,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           {/* Add the Tawk.to script here */}
           <Script
             strategy="lazyOnload"
-            src="https://embed.tawk.to/654116b5f2439e1631ea607a/1he341dgb"
+            src="https://embed.tawk.to/PROPERTY_ID"
           />
         </head>
         <body
