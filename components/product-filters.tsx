@@ -92,12 +92,7 @@ export function ProductFilters() {
                         checked
                           ? params.delete(section.id)
                           : params.set(section.id, option.value)
-                        const newUrl = `/?${params.toString()}`;
-                        const scrollY = window.scrollY;
-                        router.replace(newUrl);
-                        window.scrollTo(0, scrollY);
-
-
+                        router.replace(`/?${params.toString()}`)
                       }}
                     />
                     <label

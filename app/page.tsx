@@ -12,37 +12,46 @@ import BannerImage from "@/components/banner-image"
 
 interface Props {
   searchParams?: {
-    date?: string;
-    price?: string;
+    date?: string
+    price?: string
+    color?: string
+    category?: string
+    size?: string
+    search?: string
   };
 }
 export default async function Page({ searchParams = {} }: Props) {
-  const { date = "desc", price } = searchParams
+  // order results by searchParams
+  const { date = "desc", price, color, category, size, search } = searchParams
   const priceOrder = price ? `| order(price ${price})` : ""
-  const dateOrder = date ? `| order(_createdAt  ${date})` : ""
-  const order = `${priceOrder} ${dateOrder}`
+  const dateOrder = date ? `| order(_createdAt ${date})` : ""
+  const order = `${priceOrder}${dateOrder}`
+
+  // filter results by searchParams
+  const productFilter = `_type == "product"`
+  const colorFilter = color ? `&& "${color}" in colors` : ""
+  const categoryFilter = category ? `&& "${category}" in categories` : ""
+  const sizeFilter = size ? `&& "${size}" in sizes` : ""
+  const searchFilter = search ? `&& name match "${search}"` : ""
+  const filter = `*[${productFilter}${colorFilter}${categoryFilter}${sizeFilter}${searchFilter}]`
 
 
-
-  const products = await client.fetch<SanityProduct[]>(groq`
-    *[_type == "product"] ${order}{
+  const products = await client.fetch<SanityProduct[]>(
+    groq`${filter} ${order} {
       _id,
       _createdAt,
-      sku,
       name,
-      description,
-      price,
+      sku,
       images,
-      categories,
       currency,
-      "slug": slug.current,
-    }
-  `)
+      price,
+      description,
+      "slug": slug.current
+    }`
+  )
 
   return (
     <>
-
-
       <div>
         <div className="px-4 pt-20 text-center">
           <h1 className="text-4xl font-extrabold tracking-normal mb-4">
@@ -52,7 +61,7 @@ export default async function Page({ searchParams = {} }: Props) {
             {siteConfig.description}
           </p>
         </div>
-        <BannerImage />
+        {/* <BannerImage /> */}
         <div>
           <main className="mx-auto max-w-6xl px-6">
             <div className="flex items-center justify-between border-b border-gray-200 pb-4 pt-24 dark:border-gray-800">
