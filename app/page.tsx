@@ -16,8 +16,9 @@ interface Props {
   };
 }
 export default async function Page({ searchParams = {} }: Props) {
-  const priceOrder = searchParams.price ? `| order(price ${searchParams.price})` : ""
-  const dateOrder = searchParams.date ? `| order(_createdAt  ${searchParams.date})` : ""
+  const { date, price } = searchParams
+  const priceOrder = price ? `| order(price ${price})` : ""
+  const dateOrder = date ? `| order(_createdAt  ${date})` : ""
   const order = `${priceOrder} ${dateOrder}`
 
 
