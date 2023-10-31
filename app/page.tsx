@@ -17,7 +17,7 @@ interface Props {
   };
 }
 export default async function Page({ searchParams = {} }: Props) {
-  const { date, price } = searchParams
+  const { date = "desc", price } = searchParams
   const priceOrder = price ? `| order(price ${price})` : ""
   const dateOrder = date ? `| order(_createdAt  ${date})` : ""
   const order = `${priceOrder} ${dateOrder}`
@@ -53,7 +53,6 @@ export default async function Page({ searchParams = {} }: Props) {
           </p>
         </div>
         <BannerImage />
-
         <div>
           <main className="mx-auto max-w-6xl px-6">
             <div className="flex items-center justify-between border-b border-gray-200 pb-4 pt-24 dark:border-gray-800">

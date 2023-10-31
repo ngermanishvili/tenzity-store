@@ -12,10 +12,7 @@ const BannerImage = () => (
                 alt="Landscape photograph by Tobias Tullius"
                 style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '15px', }}
             />
-
         </div>
-
-
     </div>
 );
 

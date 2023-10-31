@@ -48,6 +48,10 @@ const filters = [
 ]
 
 export function ProductFilters() {
+  const router = useRouter()
+  const searchParams = useSearchParams()
+  // convert searchParams to array
+  const searchValues = Array.from(searchParams.entries())
   return (
     <form className="sticky top-20">
       <h3 className="sr-only">Categories</h3>
@@ -57,20 +61,50 @@ export function ProductFilters() {
           <AccordionItem value={`item-${i}`}>
             <AccordionTrigger>
               <span>
-                Section{" "}
-                <span className="ml-1 text-xs font-extrabold uppercase text-gray-400"></span>
+                {section.name}{" "}
+                <span className="ml-1 text-xs font-extrabold uppercase text-gray-400">
+                  {/* display current applied filter next to section name */}
+                  {searchParams.get(section.id)
+                    ? `(${searchParams.get(section.id)})`
+                    : ""}
+                </span>
               </span>
             </AccordionTrigger>
             <AccordionContent>
               <div className="space-y-4">
-                {section.options.map((option) => (
+                {section.options.map((option, optionIndex) => (
                   <div
                     key={option.value}
                     className="flex items-center space-x-2"
                   >
-                    <Checkbox />
-                    <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-                      Label
+                    <Checkbox
+                      id={`filter-${section.id}-${optionIndex}`}
+                      // will return true if at least 1 element in searchValues meets the supplied condition
+                      checked={searchValues.some(
+                        ([key, value]) =>
+                          key === section.id && value === option.value
+                      )}
+                      // add/delete selected filter to/from searchParams
+                      onClick={(event) => {
+                        const params = new URLSearchParams(searchParams)
+                        const checked =
+                          event.currentTarget.dataset.state === "checked"
+                        checked
+                          ? params.delete(section.id)
+                          : params.set(section.id, option.value)
+                        const newUrl = `/?${params.toString()}`;
+                        const scrollY = window.scrollY;
+                        router.replace(newUrl);
+                        window.scrollTo(0, scrollY);
+
+
+                      }}
+                    />
+                    <label
+                      htmlFor={`filter-${section.id}-${optionIndex}`}
+                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
+                      {option.label}
                     </label>
                   </div>
                 ))}
