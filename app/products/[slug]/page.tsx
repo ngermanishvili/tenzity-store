@@ -5,7 +5,7 @@ import { SanityProduct } from "@/config/inventory"
 import { ProductGallery } from "@/components/product-gallery"
 import { ProductInfo } from "@/components/product-info"
 
-interface Props {}
+interface Props { }
 
 export default function Page() {
   return (
@@ -20,3 +20,5 @@ export default function Page() {
     </main>
   )
 }
+
+//
