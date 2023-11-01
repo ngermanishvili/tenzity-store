@@ -88,6 +88,8 @@ export default async function Page({ searchParams = {} }: Props) {
                 {/* Product grid */}
                 <ProductGrid products={products} />
               </div>
+              <div style={{ width: '100%', height: '100px' }}></div>
+              <BannerImage />
             </section>
           </main>
         </div>
