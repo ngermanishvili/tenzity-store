@@ -7,13 +7,10 @@ const BannerImage = () => (
     <div className="Container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
         <div className="Container" style={{ width: '100%', height: 'auto', position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <span style={{ position: 'absolute', margin: '0 auto' }}>
-
                 <h1 className="text-4xl font-extrabold tracking-normal mb-4">
                     TENZITY STORE <br />
                 </h1>
-
             </span>
-
             <Image
                 className="Image"
                 src={Banner}
@@ -25,4 +22,3 @@ const BannerImage = () => (
 );
 
 export default BannerImage;
-//

@@ -35,7 +35,6 @@ export function ProductGallery() {
           ))}
         </ul>
       </div>
-
       {/* Main Image */}
       <div className="aspect-h-1 aspect-w-1 w-full">
         <Image
@@ -51,4 +50,4 @@ export function ProductGallery() {
   )
 }
 
-////
+////sadsadasd
