@@ -12,6 +12,7 @@ import { NextUIProvider } from "@nextui-org/react";
 
 
 
+
 interface RootLayoutProps {
   children: React.ReactNode
 }

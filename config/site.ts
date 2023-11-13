@@ -4,11 +4,9 @@ export const siteConfig = {
   name: "TENZITY",
   description: "COMING SOON",
   footer: [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Terms & Conditions", href: "#" },
-    { name: "Shipping & Return Policy", href: "#" },
-    { name: "Privacy Policy", href: "#" },
+    { name: "მთავარი", href: "/" },
+    { name: "ჩვენს შესახებ", href: "/about" },
+    { name: "როგორ შევუკვეთო?", href: "#" },
     { name: "FAQ", href: "#" },
   ],
 }

@@ -6,6 +6,9 @@ import { cn } from "@/lib/utils"
 import { ProductFilters } from "@/components/product-filters"
 import { ProductGrid } from "@/components/product-grid"
 import { ProductSort } from "@/components/product-sort"
+import Image from "next/image";
+import LuffyImgSticked from "@/public/products/luffy.png";
+import LuffyImgSticked2 from "@/public/products/luffy-rotate.png";
 
 
 interface Props {
@@ -50,8 +53,14 @@ export default async function Page({ searchParams }: Props) {
   return (
     <div>
       <div className="px-4 pt-20 text-center">
-        <h1 className="text-4xl font-extrabold tracking-normal">Tenzity</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-base">COMING soon</p>
+        <h1 className="text-4xl font-extrabold tracking-normal">TENZITY STORE</h1>
+        <p className="mx-auto mt-4 max-w-3xl text-base">არსებული პროდუქცია გაიყიდება მხოლოდ საცალოდ, ჩვენი მიზანია მომხმარებელს შევუქმნათ კომფორტის და ელეგანტურობის მაღალი განცდა</p>
+      </div>
+      <div className="mt-10 w-[60px] h-[60px] sm:w-[150px] sm:h-[150px] absolute right-[7px] sm:right-[60px] top-14 sm:top-20">
+        <Image src={LuffyImgSticked} alt="Luffy" />
+      </div>
+      <div className="mt-10 w-[60px] h-[60px] sm:w-[150px] sm:h-[150px] absolute left-[7px] sm:left-[60px] top-14 sm:top-20">
+        <Image src={LuffyImgSticked2} alt="Luffy" />
       </div>
       <div>
         <main className="mx-auto max-w-6xl px-6">

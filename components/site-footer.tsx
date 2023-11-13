@@ -1,6 +1,6 @@
-import Link from "next/link"
+import Link from "next/link";
 
-import { siteConfig } from "@/config/site"
+import { siteConfig } from "@/config/site";
 
 export function SiteFooter() {
   return (
@@ -18,14 +18,16 @@ export function SiteFooter() {
             </div>
           ))}
         </nav>
-        <Link
-          href="https://www.fullstack.so"
-          className="mt-10 block text-center text-xs leading-5"
-        >
-          &copy; {new Date().getFullYear()} {siteConfig.name} LLC. All rights
-          reserved.
-        </Link>
+        <div>
+          <Link
+            href="https://www.fullstack.so"
+            className="mt-10 block text-center text-xs leading-5"
+          >
+            &copy; {new Date().getFullYear()} {siteConfig.name} LLC. All rights
+            reserved.
+          </Link>
+        </div>
       </div>
     </footer>
-  )
+  );
 }
