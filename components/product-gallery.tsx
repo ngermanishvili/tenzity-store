@@ -1,4 +1,5 @@
 "use client"
+
 import { useState } from "react"
 import Image from "next/image"
 import { urlForImage } from "@/sanity/lib/image"
@@ -21,8 +22,8 @@ export function ProductGallery({ product }: Props) {
           {product.images.map((image, index) => (
             <div
               key={image._key as string}
-              onClick={() => setSelectedImage(index)}
               className="relative flex h-24 cursor-pointer items-center justify-center rounded-md bg-white text-sm font-medium uppercase hover:bg-gray-50"
+              onClick={() => setSelectedImage(index)}
             >
               <span className="absolute inset-0 overflow-hidden rounded-md">
                 <Image
@@ -31,7 +32,6 @@ export function ProductGallery({ product }: Props) {
                   height={200}
                   alt=""
                   className="h-full w-full object-cover object-center"
-                  // shimmer effect
                   placeholder="blur"
                   blurDataURL={`data:image/svg+xml;base64,${toBase64(
                     shimmer(200, 200)
@@ -57,12 +57,11 @@ export function ProductGallery({ product }: Props) {
           alt={`Main ${product.name} image`}
           width={600}
           height={750}
-          className="h-full w-full border-2 border-gray-200 object-cover object-center shadow-sm dark:border-gray-800 sm:rounded-lg"
-          // shimmer effect
           placeholder="blur"
           blurDataURL={`data:image/svg+xml;base64,${toBase64(
             shimmer(600, 750)
           )}`}
+          className="h-full w-full border-2 border-gray-200 object-cover object-center shadow-sm dark:border-gray-800 sm:rounded-lg"
         />
       </div>
     </div>

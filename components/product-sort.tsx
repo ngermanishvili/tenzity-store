@@ -28,6 +28,7 @@ const sortOptions = [
 
 export function ProductSort() {
   const router = useRouter()
+
   return (
     <div className="flex items-center">
       <Select onValueChange={(value) => router.replace(value)}>
@@ -35,11 +36,10 @@ export function ProductSort() {
           <SelectValue placeholder="Sort By" />
         </SelectTrigger>
         <SelectContent>
-          {sortOptions.map(option => (
-            <SelectItem value={option.value} key={option.name}>
-              {option.name}
+          {sortOptions.map((opt) => (
+            <SelectItem key={opt.name} value={opt.value}>
+              {opt.name}
             </SelectItem>
-
           ))}
         </SelectContent>
       </Select>

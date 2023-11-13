@@ -48,10 +48,11 @@ const filters = [
 ]
 
 export function ProductFilters() {
-  const router = useRouter()
   const searchParams = useSearchParams()
-  // convert searchParams to array
+  const router = useRouter()
+
   const searchValues = Array.from(searchParams.entries())
+
   return (
     <form className="sticky top-20">
       <h3 className="sr-only">Categories</h3>
@@ -63,32 +64,30 @@ export function ProductFilters() {
               <span>
                 {section.name}{" "}
                 <span className="ml-1 text-xs font-extrabold uppercase text-gray-400">
-                  {/* display current applied filter next to section name */}
                   {searchParams.get(section.id)
-                    ? `(${searchParams.get(section.id)})`
+                    ? `( ${searchParams.get(section.id)} )`
                     : ""}
                 </span>
               </span>
             </AccordionTrigger>
             <AccordionContent>
               <div className="space-y-4">
-                {section.options.map((option, optionIndex) => (
+                {section.options.map((option, optionIdx) => (
                   <div
                     key={option.value}
                     className="flex items-center space-x-2"
                   >
                     <Checkbox
-                      id={`filter-${section.id}-${optionIndex}`}
-                      // will return true if at least 1 element in searchValues meets the supplied condition
+                      id={`filter-${section.id}-${optionIdx}`}
                       checked={searchValues.some(
                         ([key, value]) =>
                           key === section.id && value === option.value
                       )}
-                      // add/delete selected filter to/from searchParams
-                      onClick={(event) => {
+                      onClick={(e) => {
                         const params = new URLSearchParams(searchParams)
                         const checked =
-                          event.currentTarget.dataset.state === "checked"
+                          e.currentTarget.dataset.state === "checked"
+
                         checked
                           ? params.delete(section.id)
                           : params.set(section.id, option.value)
@@ -96,7 +95,7 @@ export function ProductFilters() {
                       }}
                     />
                     <label
-                      htmlFor={`filter-${section.id}-${optionIndex}`}
+                      htmlFor={`filter-${section.id}-${optionIdx}`}
                       className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
                       {option.label}
