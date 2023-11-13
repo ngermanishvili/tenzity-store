@@ -13,7 +13,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 const filters = [
   {
     id: "category",
-    name: "Category",
+    name: "კატეგორია",
     options: [
       { value: "bags", label: "Bags" },
       { value: "belts", label: "Belts" },
@@ -24,7 +24,7 @@ const filters = [
   },
   {
     id: "size",
-    name: "Size",
+    name: "ზომა",
     options: [
       { value: "xs", label: "X-Small" },
       { value: "s", label: "Small" },
@@ -36,7 +36,7 @@ const filters = [
   },
   {
     id: "color",
-    name: "Color",
+    name: "ფერი",
     options: [
       { value: "black", label: "Black" },
       { value: "blue", label: "Blue" },

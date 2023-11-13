@@ -5,7 +5,7 @@ export const siteConfig = {
   description: "COMING SOON",
   footer: [
     { name: "Home", href: "/" },
-    { name: "About", href: "#" },
+    { name: "About", href: "/about" },
     { name: "Terms & Conditions", href: "#" },
     { name: "Shipping & Return Policy", href: "#" },
     { name: "Privacy Policy", href: "#" },

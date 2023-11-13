@@ -21,9 +21,9 @@ import {
 import { ProductFilters } from "@/components/product-filters"
 
 const sortOptions = [
-  { name: "Newest", value: "/?date=desc" },
-  { name: "Price, low to high", value: "/?price=asc" },
-  { name: "Price, high to low", value: "/?price=desc" },
+  { name: "ახალი დამატებული", value: "/?date=desc" },
+  { name: "ფასი,  ზრდადი", value: "/?price=asc" },
+  { name: "ფასი, კლებადი", value: "/?price=desc" },
 ]
 
 export function ProductSort() {
@@ -33,7 +33,7 @@ export function ProductSort() {
     <div className="flex items-center">
       <Select onValueChange={(value) => router.replace(value)}>
         <SelectTrigger className="sm:w-[180px]">
-          <SelectValue placeholder="Sort By" />
+          <SelectValue placeholder="გაფილტრე" />
         </SelectTrigger>
         <SelectContent>
           {sortOptions.map((opt) => (
