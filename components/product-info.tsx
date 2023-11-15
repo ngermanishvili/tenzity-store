@@ -33,11 +33,11 @@ export function ProductInfo({ product }: Props) {
     isInCart ? incrementItem(item._id) : addItem(item)
     toast({
       title: `${item.name} (${getSizeName(selectedSize)})`,
-      description: "Product added to cart",
+      description: "პროდუქტი წარმატებით დაემატა კალათაში",
       action: (
         <Link href="/cart">
           <Button variant="link" className="gap-x-2 whitespace-nowrap">
-            <span>Open cart</span>
+            <span>გახსენი კალათა</span>
             <ArrowRight className="h-5 w-5" />
           </Button>
         </Link>
@@ -50,7 +50,7 @@ export function ProductInfo({ product }: Props) {
       <h1 className="text-3xl font-bold tracking-tight">{product.name}</h1>
 
       <div className="mt-3">
-        <h2 className="sr-only">Product information</h2>
+        <h2 className="sr-only">ინფორმაცია</h2>
         <p className="text-3xl tracking-tight">
           {formatCurrencyString({
             value: product.price,
@@ -60,7 +60,7 @@ export function ProductInfo({ product }: Props) {
       </div>
 
       <div className="mt-6">
-        <h3 className="sr-only">Description</h3>
+        <h3 className="sr-only">აღწერა</h3>
         <div className="space-y-6 text-base">{product.description}</div>
       </div>
 
@@ -87,8 +87,7 @@ export function ProductInfo({ product }: Props) {
             onClick={addToCart}
             className="w-full bg-violet-600 py-6 text-base font-medium text-white hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500"
           >
-            Add to cart
-          </Button>
+            კალათაში დამატება          </Button>
         </div>
       </form>
     </div>

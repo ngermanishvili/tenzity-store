@@ -1,7 +1,5 @@
 "use client"
 import "@/styles/globals.css"
-import { Metadata } from "next"
-import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { Providers } from "@/components/providers"
@@ -10,9 +8,6 @@ import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { NextUIProvider } from "@nextui-org/react";
 
-
-
-
 interface RootLayoutProps {
   children: React.ReactNode
 }
@@ -20,8 +15,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
-      <html lang="en" suppressHydrationWarning>
-        <head />
+      <html lang="ka" suppressHydrationWarning>
         <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
@@ -29,7 +23,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           <Providers>
-            {/* Wrap the entire application with NextUIProvider */}
             <NextUIProvider>
               <div className="relative flex min-h-screen flex-col">
                 <SiteHeader />

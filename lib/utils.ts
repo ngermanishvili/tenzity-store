@@ -10,13 +10,13 @@ export function getSizeName(value: string) {
     case "xs":
       return "X-Small"
     case "s":
-      return "Small"
+      return "S - პატარა"
     case "m":
-      return "Medium"
+      return "M - საშუალო"
     case "l":
-      return "Large"
+      return "L - დიდი"
     case "xl":
-      return "X-Large"
+      return "XL"
     case "one-size":
       return "One Size"
   }

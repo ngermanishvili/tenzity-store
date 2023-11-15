@@ -14,11 +14,18 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   if (pathname.startsWith('studo')) return null;
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    console.log('submitted');
+
+
+  }
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between space-x-4 px-6 sm:space-x-0">
         <MainNav />
-        <form className="hidden items-center lg:inline-flex">
+        <form onSubmit={handleSubmit} className="hidden items-center lg:inline-flex">
           <Input
             id="search"
             name="search"

@@ -12,7 +12,7 @@ interface Props {
 export function Providers({ children }: Props) {
   return (
     <CartProvider
-      currency="USD"
+      currency="GEL"
       shouldPersist
       cartMode="checkout-session"
       stripe={process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY!}

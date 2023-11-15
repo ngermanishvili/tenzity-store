@@ -1,8 +1,12 @@
 "use client"
+import { Image } from "@nextui-org/react";
 import { ScrollShadow } from "@nextui-org/react";
 import OwnerCard from "@/components/owner-card";
 import PaymentSnippet from "@/components/owner-payment-snippet";
 import { Link } from "@nextui-org/react";
+import AboutUsImg from '@/public/products/about.jpg'
+
+
 
 
 
@@ -28,6 +32,12 @@ export default async function Page() {
                                     Facebook
                                 </Link> გვერდებზე.
                             </ScrollShadow>
+                            <Image
+                                width={800}
+                                height={800}
+                                alt="hoodies, ჰუდები, handmade clothes, shop tansacmeli, hudebi, hudi, tansacmeli, zamtris tansacmeli, maikebi"
+                                src={AboutUsImg.src}
+                            />
                         </div>
                     </div>
                 </div>

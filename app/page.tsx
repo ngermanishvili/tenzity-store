@@ -9,7 +9,15 @@ import { ProductSort } from "@/components/product-sort"
 import Image from "next/image";
 import LuffyImgSticked from "@/public/products/luffy.png";
 import LuffyImgSticked2 from "@/public/products/luffy-rotate.png";
+import { Metadata } from "next"
 
+export const metadata: Metadata = {
+  title: `Handmade Hoodies - ${siteConfig.name}`,
+  description: `Explore unique handmade hoodies at ${siteConfig.name}. Shop a variety of hudebi (hoodies) in our tansacmeli (clothes) store. Find the perfect hudi (hood) for your style.`,
+  icons: { icon: "/favicon.ico" },
+  keywords: "hoodies, ჰუდები, handmade, ტანსაცმელი, თბილი ტანსაცმელიმ, clothes, shop tansacmeli, hudebi, hudi, ჰუდი, tansacmeli, zamtris tansacmeli, maikebi",
+
+};
 
 interface Props {
   searchParams: {
@@ -19,6 +27,7 @@ interface Props {
     category?: string
     size?: string
     search?: string
+    author?: string
   }
 }
 
@@ -51,49 +60,66 @@ export default async function Page({ searchParams }: Props) {
   )
 
   return (
-    <div>
-      <div className="px-4 pt-20 text-center">
-        <h1 className="text-4xl font-extrabold tracking-normal">TENZITY STORE</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-base">არსებული პროდუქცია გაიყიდება მხოლოდ საცალოდ, ჩვენი მიზანია მომხმარებელს შევუქმნათ კომფორტის და ელეგანტურობის მაღალი განცდა</p>
-      </div>
-      <div className="mt-10 w-[60px] h-[60px] sm:w-[150px] sm:h-[150px] absolute right-[7px] sm:right-[60px] top-14 sm:top-20">
-        <Image src={LuffyImgSticked} alt="Luffy" />
-      </div>
-      <div className="mt-10 w-[60px] h-[60px] sm:w-[150px] sm:h-[150px] absolute left-[7px] sm:left-[60px] top-14 sm:top-20">
-        <Image src={LuffyImgSticked2} alt="Luffy" />
-      </div>
-      <div>
-        <main className="mx-auto max-w-6xl px-6">
-          <div className="flex items-center justify-between border-b border-gray-200 pb-4 pt-24 dark:border-gray-800">
-            <h1 className="text-xl font-bold tracking-tight sm:text-2xl">
-              {products.length} result{products.length === 1 ? "" : "s"}
-            </h1>
-            {/* Product Sort */}
-            <ProductSort />
-          </div>
+    <>
+      <head>
+        <title>{metadata.title?.toString()}</title>
+        <meta name="description" content={metadata.description?.toString()} />
+        <meta name="keywords" content={metadata.keywords?.toString()} />
+        <meta name="author" content={siteConfig.author} />
+        {/* Open Graph meta tags (for sharing on social media) */}
+        <meta property="og:title" content={metadata.title?.toString()} />
+        <meta property="og:description" content={metadata.description?.toString()} />
+        <meta property="og:type" content="www.tenzity.ge" />
+        <meta property="og:url" content={`https://tenzity.ge`} />
+        <meta property="og:image" content="../public/products/logotenzity.jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
-          <section aria-labelledby="products-heading" className="pb-24 pt-6">
-            <h2 id="products-heading" className="sr-only">
-              Products
-            </h2>
-            <div
-              className={cn(
-                "grid grid-cols-1 gap-x-8 gap-y-10",
-                products.length > 0
-                  ? "lg:grid-cols-4"
-                  : "lg:grid-cols-[1fr_3fr]"
-              )}
-            >
-              <div className="hidden lg:block">
-                {/* Product filters */}
-                <ProductFilters />
-              </div>
-              {/* Product grid */}
-              <ProductGrid products={products} />
+      </head>
+      <div>
+        <div className="px-4 pt-20 text-center">
+          <h1 className="text-4xl font-extrabold tracking-normal">TENZITY STORE</h1>
+          <p className="mx-auto mt-4 max-w-3xl text-base">არსებული პროდუქცია გაიყიდება მხოლოდ საცალოდ, ჩვენი მიზანია მომხმარებელს შევუქმნათ კომფორტის და ელეგანტურობის მაღალი განცდა</p>
+        </div>
+        <div className="mt-10 w-[60px] h-[60px] sm:w-[150px] sm:h-[150px] absolute right-[7px] sm:right-[60px] top-14 sm:top-20">
+          <Image src={LuffyImgSticked} alt="Luffy" />
+        </div>
+        <div className="mt-10 w-[60px] h-[60px] sm:w-[150px] sm:h-[150px] absolute left-[7px] sm:left-[60px] top-14 sm:top-20">
+          <Image src={LuffyImgSticked2} alt="Luffy" />
+        </div>
+        <div>
+          <main className="mx-auto max-w-6xl px-6">
+            <div className="flex items-center justify-between border-b border-gray-200 pb-4 pt-24 dark:border-gray-800">
+              <h1 className="text-xl font-bold tracking-tight sm:text-2xl">
+                {products.length} result{products.length === 1 ? "" : "s"}
+              </h1>
+              {/* Product Sort */}
+              <ProductSort />
             </div>
-          </section>
-        </main>
+
+            <section aria-labelledby="products-heading" className="pb-24 pt-6">
+              <h2 id="products-heading" className="sr-only">
+                Products
+              </h2>
+              <div
+                className={cn(
+                  "grid grid-cols-1 gap-x-8 gap-y-10",
+                  products.length > 0
+                    ? "lg:grid-cols-4"
+                    : "lg:grid-cols-[1fr_3fr]"
+                )}
+              >
+                <div className="hidden lg:block">
+                  {/* Product filters */}
+                  <ProductFilters />
+                </div>
+                {/* Product grid */}
+                <ProductGrid products={products} />
+              </div>
+            </section>
+          </main>
+        </div>
       </div>
-    </div>
+    </>
   )
 }

@@ -15,34 +15,33 @@ const filters = [
     id: "category",
     name: "კატეგორია",
     options: [
-      { value: "bags", label: "Bags" },
-      { value: "belts", label: "Belts" },
-      { value: "gloves", label: "Gloves" },
-      { value: "scarves", label: "Scarves" },
-      { value: "wallets", label: "Wallets" },
+      { value: "hoodies", label: "ჰუდები" },
+      { value: "tshirt", label: "მაისურები" },
+      // { value: "gloves", label: "" },
+      // { value: "scarves", label: "" },
+      // { value: "wallets", label: "" },
     ],
   },
   {
     id: "size",
     name: "ზომა",
     options: [
-      { value: "xs", label: "X-Small" },
-      { value: "s", label: "Small" },
-      { value: "m", label: "Medium" },
-      { value: "l", label: "Large" },
-      { value: "xl", label: "X-Large" },
-      { value: "one-size", label: "One Size" },
+      { value: "s", label: "S" },
+      { value: "m", label: "M" },
+      { value: "l", label: "L" },
+      { value: "xl", label: "XL" },
+      // { value: "one-size", label: "One Size" },
     ],
   },
   {
     id: "color",
     name: "ფერი",
     options: [
-      { value: "black", label: "Black" },
-      { value: "blue", label: "Blue" },
-      { value: "brown", label: "Brown" },
-      { value: "green", label: "Green" },
-      { value: "yellow", label: "Yellow" },
+      { value: "black", label: "შავი" },
+      { value: "white", label: "თეთრი" },
+      // { value: "brown", label: "Brown" },
+      // { value: "green", label: "Green" },
+      // { value: "yellow", label: "Yellow" },
     ],
   },
 ]
@@ -55,7 +54,7 @@ export function ProductFilters() {
 
   return (
     <form className="sticky top-20">
-      <h3 className="sr-only">Categories</h3>
+      <h3 className="sr-only">კატეგორია</h3>
 
       {filters.map((section, i) => (
         <Accordion key={i} type="single" collapsible>

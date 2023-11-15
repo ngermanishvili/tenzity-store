@@ -55,21 +55,21 @@ export function CartSummary() {
 
       <dl className="mt-6 space-y-4">
         <div className="flex items-center justify-between">
-          <dt className="text-sm">Subtotal</dt>
+          <dt className="text-sm">პროდუქტის ფასი</dt>
           <dd className="text-sm font-medium">{formattedTotalPrice}</dd>
         </div>
         <div className="flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-600">
           <dt className="flex items-center text-sm">
-            <span>Shipping estimate</span>
+            <span>მიწოდების ფასი</span>
           </dt>
           <dd className="text-sm font-medium">
-            {formatCurrencyString({ value: shippingAmount, currency: "USD" })}
+            {formatCurrencyString({ value: shippingAmount, currency: "GEL" })}
           </dd>
         </div>
         <div className="flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-600">
-          <dt className="text-base font-medium">Order total</dt>
+          <dt className="text-base font-medium">ჯამი</dt>
           <dd className="text-base font-medium">
-            {formatCurrencyString({ value: totalAmount, currency: "USD" })}
+            {formatCurrencyString({ value: totalAmount, currency: "GEL" })}
           </dd>
 
         </div>
@@ -81,7 +81,7 @@ export function CartSummary() {
           {isLoading ? "Loading..." : "COMING SOON"}
         </Button>
         <Button disabled={false} className="w-full mt-4">
-          <a target="blank" className="w-full uppercase " href="https://nextjs.org">For Purchase DM Us in instagram</a>
+          <a target="blank" className="w-full uppercase " href="https://www.instagram.com/tenzityy/">შესაძენად მოგვწერეთ ჩვენს ინსტაგრამ გვერდზე.</a>
         </Button>
 
 

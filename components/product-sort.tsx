@@ -46,15 +46,15 @@ export function ProductSort() {
       <Sheet>
         <SheetContent className="w-[300px]">
           <SheetHeader>
-            <SheetTitle>Categories</SheetTitle>
+            <SheetTitle>კატეგორია</SheetTitle>
             <SheetDescription>
-              Narrow your product search using the options below.
+              შეამცირეთ თქვენი პროდუქტის ძებნა ქვემოთ მოცემული ვარიანტების გამოყენებით.
             </SheetDescription>
           </SheetHeader>
           <ProductFilters />
         </SheetContent>
         <SheetTrigger className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden">
-          <span className="sr-only">Filters</span>
+          <span className="sr-only">ფილტრი</span>
           <Filter className="h-5 w-5" aria-hidden="true" />
         </SheetTrigger>
       </Sheet>

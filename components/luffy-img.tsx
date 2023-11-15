@@ -8,7 +8,7 @@ const LuffyImgSticked = () => {
             <Image
                 width={50}
                 height={50}
-                alt="NextUI hero Image with delay"
+                alt="hoodies, ჰუდები, handmade clothes, shop tansacmeli, hudebi, hudi, tansacmeli, zamtris tansacmeli, maikebi"
                 src={LuffyImageSticked.src}
             />
         </>
