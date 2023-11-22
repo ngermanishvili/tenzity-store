@@ -17,9 +17,6 @@ const filters = [
     options: [
       { value: "hoodies", label: "ჰუდები" },
       { value: "tshirt", label: "მაისურები" },
-      // { value: "gloves", label: "" },
-      // { value: "scarves", label: "" },
-      // { value: "wallets", label: "" },
     ],
   },
   {
@@ -30,7 +27,6 @@ const filters = [
       { value: "m", label: "M" },
       { value: "l", label: "L" },
       { value: "xl", label: "XL" },
-      // { value: "one-size", label: "One Size" },
     ],
   },
   {
@@ -39,9 +35,6 @@ const filters = [
     options: [
       { value: "black", label: "შავი" },
       { value: "white", label: "თეთრი" },
-      // { value: "brown", label: "Brown" },
-      // { value: "green", label: "Green" },
-      // { value: "yellow", label: "Yellow" },
     ],
   },
 ]
