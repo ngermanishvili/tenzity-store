@@ -87,7 +87,7 @@ export function ProductInfo({ product }: Props) {
             onClick={addToCart}
             className="w-full bg-violet-600 py-6 text-base font-medium text-white hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500"
           >
-            კალათაში დამატება          </Button>
+            კალათაში დამატება   </Button>
         </div>
       </form>
     </div>

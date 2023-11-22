@@ -7,17 +7,12 @@ import { Link } from "@nextui-org/react";
 import AboutUsImg from '@/public/products/about.jpg'
 
 
-
-
-
 export default async function Page() {
 
 
     return (
         <>
             <main className="grid min-h-full place-items-center px-6 py-24 sm:py-32 lg:px-8">
-
-
                 <PaymentSnippet />
                 <div className="text-center">
                     {/* Checkout session */}

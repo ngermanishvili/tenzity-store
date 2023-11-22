@@ -10,6 +10,9 @@ import Image from "next/image";
 import LuffyImgSticked from "@/public/products/luffy.png";
 import LuffyImgSticked2 from "@/public/products/luffy-rotate.png";
 import { Metadata } from "next"
+import { ProductGridNoLimit } from "@/components/product-grid-nolimit"
+import Head from 'next/head';  // Import Head from next/head
+
 
 export const metadata: Metadata = {
   title: `Handmade Hoodies - ${siteConfig.name}`,
@@ -61,7 +64,7 @@ export default async function Page({ searchParams }: Props) {
 
   return (
     <>
-      <head>
+      <Head>
         <title>{metadata.title?.toString()}</title>
         <meta name="description" content={metadata.description?.toString()} />
         <meta name="keywords" content={metadata.keywords?.toString()} />
@@ -74,8 +77,7 @@ export default async function Page({ searchParams }: Props) {
         <meta property="og:image" content="../public/products/logotenzity.jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-
-      </head>
+      </Head>
       <div>
         <div className="px-4 pt-20 text-center">
           <h1 className="text-4xl font-extrabold tracking-normal">TENZITY STORE</h1>
@@ -91,10 +93,11 @@ export default async function Page({ searchParams }: Props) {
           <main className="mx-auto max-w-6xl px-6">
             <div className="flex items-center justify-between border-b border-gray-200 pb-4 pt-24 dark:border-gray-800">
               <h1 className="text-xl font-bold tracking-tight sm:text-2xl">
-                {products.length} result{products.length === 1 ? "" : "s"}
+                {products.length} პროდუქტი{products.length === 1 ? "" : ""}
+
               </h1>
               {/* Product Sort */}
-              <ProductSort />
+
             </div>
 
             <section aria-labelledby="products-heading" className="pb-24 pt-6">
@@ -103,15 +106,14 @@ export default async function Page({ searchParams }: Props) {
               </h2>
               <div
                 className={cn(
-                  "grid grid-cols-1 gap-x-8 gap-y-10",
+                  "",
                   products.length > 0
-                    ? "lg:grid-cols-4"
+                    ? "lg:grid-cols-2"
                     : "lg:grid-cols-[1fr_3fr]"
                 )}
               >
                 <div className="hidden lg:block">
                   {/* Product filters */}
-                  <ProductFilters />
                 </div>
                 {/* Product grid */}
                 <ProductGrid products={products} />
